@@ -13,3 +13,31 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+	background: asset-url('patron.png') no-repeat;
+}
+
+@font-face {
+font-family: 'I love the smell of rain';
+font-style: normal;
+font-weight: normal;
+src: local('I love the smell of rain'), asset-url('rain.ttf') format('ttf');
+}
+
+.container {
+	width: 100%;
+	height: 98vh;
+	min-height: 700px;
+	padding-top: 150px;
+	margin-top: 20px;
+	text-align: center;
+	font-family: 'I love the smell of rain';
+	font-weight: normal;
+	font-size: 2em;
+	background-color: white;
+}

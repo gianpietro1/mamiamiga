@@ -21,14 +21,35 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+# Application-specific gems
+# User authentication
+gem 'devise'
+# Sensitive info
+gem 'figaro', '1.0'
+# Authorization / roles
+gem 'pundit'
+# Styling
+gem 'bootstrap-sass'
+# HAML for views
+gem 'haml-rails'
+# Jquery turbolinks
+gem 'jquery-turbolinks'
+# Upload managing
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog'
+# Mail form
+gem 'mail_form'
+# Friendly URLs
+gem 'friendly_id'
+# Meta Tags
+gem 'meta-tags'
 
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+# Capistrano
+gem 'capistrano', '~> 3.1.0'
+gem 'capistrano-bundler', '~> 1.1.2'
+gem 'capistrano-rails', '~> 1.1.1'
+gem 'capistrano-rvm', github: "capistrano/rvm"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -48,4 +69,6 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
+
+
 
