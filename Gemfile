@@ -45,12 +45,6 @@ gem 'friendly_id'
 # Meta Tags
 gem 'meta-tags'
 
-# Capistrano
-gem 'capistrano', '~> 3.1.0'
-gem 'capistrano-bundler', '~> 1.1.2'
-gem 'capistrano-rails', '~> 1.1.1'
-gem 'capistrano-rvm', github: "capistrano/rvm"
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -63,11 +57,15 @@ group :development do
   gem 'spring'
   # Use sqlite3 as the database for Active Record
 	gem 'sqlite3'
+  # Capistrano
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm', github: "capistrano/rvm"
 end
 
 group :production do
   gem 'pg'
-  gem 'rails_12factor'
 end
 
 
