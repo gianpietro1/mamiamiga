@@ -44,6 +44,10 @@ gem 'mail_form'
 gem 'friendly_id'
 # Meta Tags
 gem 'meta-tags'
+# WYSIWYG text editor for posts
+gem 'bootsy'
+# Populate DB
+gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -62,6 +66,8 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano-rvm', github: "capistrano/rvm"
+  #HTMLtoHAML
+  gem 'html2haml'
 end
 
 group :production do

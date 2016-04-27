@@ -1,0 +1,6 @@
+.col-md-8
+	%h1
+		= @post.title
+	= link_to "Editar", edit_post_path(@post), class: 'btn btn-success'
+	.post_content
+		= @post.content.html_safe

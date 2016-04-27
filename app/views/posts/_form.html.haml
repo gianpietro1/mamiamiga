@@ -1,0 +1,11 @@
+.row
+	.col-md-8
+		= form_for post do |f|
+			.form-group
+				= f.label :title
+				= f.text_field :title, class: 'form-control', placeholder: 'Ingresa el título'
+			.form-group
+				= f.label :content
+				= f.bootsy_area :content, rows:50, class: 'form-control', placeholder: 'Ingresa el texto'
+			.form-group
+				= f.submit "Guardar", class: 'btn btn-success'
