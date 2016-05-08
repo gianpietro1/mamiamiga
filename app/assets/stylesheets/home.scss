@@ -79,6 +79,27 @@
 	color: white;
 }
 
+.image_post {
+	position: relative;
+	display:block;
+}
+
+.image_post_img:hover {
+	opacity: 0.5;
+}
+
+.image_post_title {
+	position: absolute;
+	bottom: 10%;
+	padding: 2px;
+	color: white;
+	background-color: rgba(0,0,0,0.6);
+	font-size: 0.6em;
+	margin: 0 auto;
+	height: 25px;
+	max-width: 95%;
+}
+
 
 /* Desktop */
 
@@ -93,5 +114,12 @@
 	.featured_posts li:last-child {
 		display:inline;
 	}
+
+	.image_post_title {
+		padding: 20px;
+		font-size: 0.8em;
+		height: 55px
+	}
+
 
 }

@@ -1,14 +1,25 @@
+- title 'Mami Amiga'
+- set_meta_tags :og => {:title => 'Mami Amiga', :url => 'http://mamiamiga.com', :image => image_tag('logo-web.png'), :description => 'Mamá a tiempo completo de una pequeñita que amo con locura. Aquí encontrarás ideas, experiencias e inspiración para disfrutar al máximo ser mamá.' }
+- set_meta_tags description: 'Mamá a tiempo completo de una pequeñita que amo con locura. Aquí encontrarás ideas, experiencias e inspiración para disfrutar al máximo ser mamá.'
+- set_meta_tags keywords: %W[mamiamiga mami mama amiga loncheras maternidad consejos]
+
 #slide
 	%ul.slideme
 		- @posts_slider.each do |post_slider|
 			%li
 				%a{href: post_path(post_slider), class:'image_post'}
-					= image_tag(post_slider.slider_image)
+					.image_post_img
+						= image_tag(post_slider.slider_image)
+					.image_post_title
+						= post_slider.title
 %ul.featured_posts
 	- @posts_featured.each do |post_featured|
 		%li.home_featured
 			%a{href: post_path(post_featured), class:'image_post'}
-				= image_tag(post_featured.featured_image)
+				.image_post_img
+					= image_tag(post_featured.featured_image)
+				.image_post_title
+					= post_featured.title
 .row
 	.line
 	.col-md-8
@@ -19,6 +30,7 @@
 				= @posts_public.first.title
 			.post_content
 				= truncate(@posts_public.first.content_notags, :length => 1400, :separator => ' ', escape: false)
+				%br
 				= link_to 'LEER MÁS ', @posts_public.first, class: 'read_more'
 
 		.bottom_post
@@ -28,6 +40,7 @@
 				= @posts_public.last.title
 			.post_content
 				= truncate(@posts_public.last.content_notags, :length => 1400, :separator => ' ', escape: false)
+				%br
 			= link_to 'LEER MÁS ', @posts_public.last, class: 'read_more read_more_white'
 
 	.col-md-4
