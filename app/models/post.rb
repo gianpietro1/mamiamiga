@@ -16,7 +16,7 @@ class Post < ActiveRecord::Base
   default_scope { order('published_at DESC') }
 
   def content_notags
-  	self.content.gsub(/<.*>/m,"")
+  	self.content.gsub(/<img([^>])+/, "")
   end
 
 end
