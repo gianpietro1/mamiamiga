@@ -15,6 +15,13 @@ class Post < ActiveRecord::Base
 
   default_scope { order('published_at DESC') }
 
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
+ 	def should_generate_new_friendly_id?
+  	slug.blank? || title_changed?
+  end
+
   def content_notags
   	self.content.gsub(/<img([^>])+/, "")
   end

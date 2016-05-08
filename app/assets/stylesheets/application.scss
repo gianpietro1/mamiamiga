@@ -20,6 +20,7 @@
 @import "bootstrap";
 @import "social-share-button";
 @import 'bootstrap-datetimepicker';
+@import '/fonts';
 
 /* General Styles */
 
@@ -27,7 +28,7 @@
 font-family: 'I love the smell of rain';
 font-style: normal;
 font-weight: normal;
-src: local('I love the smell of rain'), asset-url('rain.ttf') format('ttf');
+src: local('I love the smell of rain'), asset-url('I love the smell of rain.ttf') format('ttf');
 }
 
 /* apply a natural box layout model to all elements, but allowing components to change */
