@@ -18,7 +18,7 @@
 			.post_title
 				= @posts_public.first.title
 			.post_content
-				= truncate(@posts_public.first.content_notags, :length => 1400, :separator => ' ')
+				= truncate(@posts_public.first.content_notags, :length => 1400, :separator => ' ', escape: false)
 				= link_to 'LEER MÁS ', @posts_public.first, class: 'read_more'
 
 		.bottom_post
@@ -27,7 +27,7 @@
 			.post_title
 				= @posts_public.last.title
 			.post_content
-				= truncate(@posts_public.last.content_notags, :length => 1400, :separator => ' ')
+				= truncate(@posts_public.last.content_notags, :length => 1400, :separator => ' ', escape: false)
 			= link_to 'LEER MÁS ', @posts_public.last, class: 'read_more read_more_white'
 
 	.col-md-4
