@@ -24,10 +24,11 @@
 /* General Styles */
 
 @font-face {
-font-family: 'I love the smell of rain';
-font-style: normal;
-font-weight: normal;
-src: local('I love the smell of rain'), asset-url('rain.ttf') format('ttf');
+  font-family: 'I love the smell of rain';
+  font-weight: normal;
+  font-style: normal;
+  src: font-url('rain.ttf');
+  src: font-url('rain.ttf') format('truetype');
 }
 
 /* apply a natural box layout model to all elements, but allowing components to change */
