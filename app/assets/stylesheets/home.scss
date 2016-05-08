@@ -1,3 +1,97 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* Mobile first */
+
+.featured_posts {
+	list-style: none;
+	padding: 0;
+}
+
+.featured_posts li:last-child {
+	display:none;
+}
+
+.home_featured {
+	float:left;
+	width: 33.3%;
+}
+
+.home_featured img {
+	width: 100%;
+}
+
+.slideme {
+	width: 100%;
+	height: 100%;
+}
+
+.slideme img {
+	width: 100%;
+}
+
+.slideme_container {
+	position: relative;
+	width: 100%;
+	padding: 0;
+	clear: both;
+}
+
+.slideme_container button {
+	position: absolute;
+	top: 50%;
+	z-index: 1000;
+	width: 20px;
+	border-radius: 100% 0 0 100%;
+	height: 20px;
+	border: none;
+	padding: 0;
+}
+
+.slideme_container button.next {
+	position: absolute;
+	right: 0px;
+	border-radius: 0 100% 100% 0;	
+	background: asset-url('arrow-right.png') no-repeat;
+	background-size: 20px 20px;
+}
+
+.slideme_container button.prev {
+	background: asset-url('arrow-left.png') no-repeat;
+	background-size: 20px 20px;
+}
+
+.top_post, .bottom_post {
+	clear: both;
+	padding: 40px;
+}
+
+.bottom_post {
+	margin: 0 auto;
+	background-color: #6FB7D6;
+	color: white;
+	margin-bottom:30px;
+	padding: 40px;
+}
+
+.top_post {
+	padding-top: 0px
+}
+
+.bottom_post .post_title, .bottom_post .post_date {
+	color: white;
+}
+
+
+/* Desktop */
+
+@media screen and (min-width: 768px) {
+
+	.slideme_container {
+		float: left;
+		width: 66.6%;
+	}
+
+
+	.featured_posts li:last-child {
+		display:inline;
+	}
+
+}

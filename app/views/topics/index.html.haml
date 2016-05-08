@@ -1,0 +1,7 @@
+%h1
+	All Topics
+- @topics.each do |topic|
+	.media
+		.media-body
+			%h4.media-heading
+				= link_to topic.name, topic

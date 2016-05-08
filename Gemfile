@@ -48,6 +48,14 @@ gem 'meta-tags'
 gem 'bootsy'
 # Populate DB
 gem 'faker'
+# Multi-language static text
+gem 'rails-i18n', '~> 4.0.4'
+# Pagination
+gem 'will_paginate'
+#Social share
+gem 'social-share-button'
+# Mail form
+gem 'mail_form'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

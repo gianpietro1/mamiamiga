@@ -1,5 +1,7 @@
 %h1
-	All Posts
+	Posts
+- if policy(Post.new).new? 
+	= link_to "Nuevo", new_post_path, class: 'btn btn-success'
 - @posts.each do |post|
 	.media
 		.media-body

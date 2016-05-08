@@ -1,0 +1,10 @@
+.col-md-8
+	%h1
+		= @topic.name
+	.pull-right
+		- if policy(@topic).new? 
+			= link_to "Nuevo", new_topic_path, class: 'btn-sm btn-success'
+		- if policy(@topic).edit? 
+			= link_to "Editar", edit_topic_path(@topic), class: 'btn-sm btn-warning'
+	.post_content
+		= @topic.description

@@ -12,7 +12,24 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootsy
 //= require turbolinks
 //= require bootstrap
+//= require social-share-button
 //= require_tree .
+//= require bootsy
+
+$(document).ready(function(){
+
+	$("#instagram").jqinstapics({
+	"user_id": "245688425",
+	"access_token": "245688425.1677ed0.870eb1e9b3c74f62b23a2960a3e2f072",
+	"count": 6
+	});
+
+	$('li.parent_menu').hover(function() {
+		$('.child_menu').toggle();
+	});
+
+}
+);
+

@@ -7,20 +7,25 @@
   .collapse.navbar-collapse#main-menu
     %ul
       %li
-        %a{href: "#"} inicio
+        %a{href: root_path} inicio
       %li
-        %a{href: "#"} quién soy
+        %a{href: '/quiensoy'} quién soy
       %li
-        %a{href: "#"} vida de mami
+        %a{href: "/vidademami"} vida de mami
       %li
-        %a{href: "#"} inspírate
+        %a{href: "/inspirate"} inspírate
+      %li.parent_menu.clearfix
+        %a{href: "javascript:;"} moda
+        %ul.child_menu
+          %li
+            %a{href: "/modamamas"} - nosotras
+          %li
+            %a{href: "/modapeques"} - niños
       %li
-        %a{href: "#"} moda
+        %a{href: "/engriete"} engríete
       %li
-        %a{href: "#"} engríete
+        %a{href: "/novedades"} novedades
       %li
-        %a{href: "#"} novedades
-      %li
-        %a{href: "#"} contacto
+        %a{href: "/contacto"} contacto
       %li
         %a{"data-target" => ".navbar-collapse.in", "data-toggle" => "collapse", :href => "#contact", class: 'close-mobile-menu'} cerrar

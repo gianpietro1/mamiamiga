@@ -1,0 +1,7 @@
+es:
+  date:
+    formats:
+      default: "%d / %m / %Y"
+  will_paginate:
+    previous_label: "&#8592; Recientes"
+    next_label: "Anteriores &#8594;"

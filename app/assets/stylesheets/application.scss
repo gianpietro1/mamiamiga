@@ -10,14 +10,15 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require bootsy
- *= require_tree .
  *= require_self
+ *= require_tree .
+ *= require bootsy
+ *= require social-share-button
  */
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "bootsy";
+@import "social-share-button";
 
 /* General Styles */
 
@@ -31,12 +32,23 @@ src: local('I love the smell of rain'), asset-url('rain.ttf') format('ttf');
 /* apply a natural box layout model to all elements, but allowing components to change */
 html {
   box-sizing: border-box;
+  padding-bottom: 40px;
 }
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
+.clear {
+	clear:both;
+}
+
+.line:after {
+	content:"";
+	margin: 20px;
+}
+
 body {
+   font-family: 'Geneva', 'Helvetica';
 }
 
 .clearfix:after {
@@ -48,8 +60,10 @@ body {
 }
 
 #container {
-	padding-left: 20px;
-	padding-right: 20px;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin-top: 20px;
 }
 
 h1 {
@@ -57,6 +71,19 @@ h1 {
 }
 
 /* Header */
+
+#user {
+	background-color: grey;
+	color: white;
+	height: 30px;
+	padding: 2px;
+}
+
+.exit_button {
+	height: 25px;
+	padding: 2px;
+	width: 50px;
+}
 
 #header {
 	width: 100%;
@@ -106,6 +133,7 @@ h1 {
 .navbar-collapse a {
 	display: block;
 	text-decoration: none;
+	color: black;
 }
 
 .navbar-collapse a:hover {
@@ -121,9 +149,180 @@ h1 {
 	float: right;
 }
 
+.social-icons {
+	float: right;
+	margin-top: 42px;
+	margin-right: 14px;
+}
+
+.social-icons a {
+	padding-right: 5px;
+}
+
+.social-icons a:hover {
+	text-decoration: none;
+	opacity: 0.7;
+}
+
+.social-icons img {
+	width: 25px !important;
+}
+
+ul.child_menu {
+	display: none;
+	height: 45px;
+	float: left;
+	width: 100%;
+}
+
+ul.child_menu > li {
+	display: block !important;
+	font-size: 1em !important;
+	max-width: 200px !important;
+}
+
+/* Posts - General */
+
+.read_more {
+	display: block;
+	margin-top: 20px;
+	font-family: 'I love the smell of rain';
+	font-size: 1.8em;
+	color: #F98CB6;
+	text-align: center;
+	margin: 0 auto;
+	font-stretch: expanded;
+}
+
+.read_more:after {
+    background-image: asset-url('mas.png');
+    background-size: 20px 20px;
+    display: inline-block;
+    width: 20px; 
+    height: 20px;
+    content:"";
+  }
+
+  .read_more_white {
+  	color: white;
+  }
+
+
+.read_more:hover {
+	text-decoration: none;
+	opacity: 0.8;
+}
+
+.post_date {
+	color: #6FB7D6;
+	font-size: 0.8em;
+}
+
+.post_title {
+	font-family: 'I love the smell of rain';
+	color: #6FB7D6;
+	font-size: 2em;
+	line-height: 1em;
+	margin: 8px 0;
+}
+
+.post_content {
+	margin-bottom: 20px;
+	line-height: 2em;
+}
+
+/* side bar */
+
+.about {
+	padding: 20px 40px;
+	padding-top:0px;
+	font-family: 'I love the smell of rain';
+}
+
+.about_title, .instagram_title {
+	border: 2.5px dashed #F98CB6;
+	font-size: 1.8em;
+	text-align: center;
+	height: 50px;	
+	padding-top: 8px;
+}
+
+.about_info img {
+	width: 100%;
+	margin: 10px auto;
+}
+
+.about_info {
+	font-size: 1.4em
+}
+
+a.about_link {
+	display: block;
+}
+
+a.about_link:hover {
+	text-decoration: none;
+	opacity: 0.7
+}
+
+.instagram {
+	font-family: 'I love the smell of rain';
+	padding: 10px 40px;
+	padding-top:0px;
+	overflow: none;
+}
+
+.instagram_title {
+	height: 50px;
+}
+
+.instagram_info {
+	overflow: auto;
+	height: 598px;
+	text-align: center
+}
+
+.instagram img {
+	width: 100%;
+	padding:0;
+	margin:0;
+}
+
+.instagram ul {
+	padding: 0 !important;
+}
+
+.instagram li {
+	list-style: none;
+}
+
+.sidebar {
+	margin-bottom: 45px;
+}
+
+#sponsor_bar {
+	height: 70px;
+	background-image: asset-url('patron.png');
+	margin: 10px auto;
+}
+
+#footer {
+	color:#A589C1;
+	text-align: center;
+	font-size: 0.8em;
+	height: 50px;
+	padding-top: 25px;
+}
+
+
 /* Desktop */
 
 @media screen and (min-width: 768px) {
+
+#container {
+	width: 95%;
+	margin: 0 auto;
+}
 
 /* Header */
 
@@ -143,7 +342,7 @@ h1 {
 }
 
 #main-menu ul {
-	width: 90%;
+	width: 100%;
 	padding: 0;
 	margin: 0 auto;
 }
@@ -152,7 +351,8 @@ h1 {
 	display: block;
 	float: left;
 	font-size: 1.5em;
-	width: 12.5%;
+	width: 100%;
+	max-width: 12.5%;
 	text-align: center;
 }
 
@@ -169,5 +369,37 @@ h1 {
 a.close-mobile-menu {
 	display: none;
 }
+
+.social-icons {
+	float: right;
+	margin-top: 36px;
+	margin-right: 40px;
+}
+
+.social-icons a {
+	padding-right: 20px;
+}
+
+.social-icons img {
+	width: 50px !important;
+}
+
+ul.child_menu {
+	height: 0px;
+}
+
+ul.child_menu > li {
+	border: 2.5px dashed #F98CB6;
+	background-color: white;
+}
+
+ul.child_menu > li:first-child {
+	border-bottom: none;
+}
+
+ul.child_menu > li:last-child {
+	border-top: none;
+}
+
 
 }

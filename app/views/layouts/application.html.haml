@@ -3,13 +3,33 @@
 	%head
 		%title
 			MamiAmiga
-		= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-		= javascript_include_tag 'application', 'data-turbolinks-track' => true
+		= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false
+		= javascript_include_tag 'application', 'data-turbolinks-track' => false
 		= favicon_link_tag 'favicon.ico'
 		= csrf_meta_tags
-	%body
+	%body{ data: {no_turbolink: true} }
+		- if current_user
+			#user
+				.pull-left
+					Acceso como:
+					= current_user.name || current_user.email
+				.pull-right
+					= link_to destroy_user_session_path, method: :delete, class: 'btn btn-primary btn-sm exit_button' do
+						Salir
+
 		#header
-			= image_tag('logo-web.png')
+			%a{href:root_path, class:'logo'}
+				= image_tag('logo-web.png')
+			.social-icons
+				%a{href:'https://www.facebook.com/mamiamigablog', target: "_blank"}
+					= image_tag('facebook.png')
+				%a{href:'https://www.instagram.com/mamiamigablog/', target: "_blank"}
+					= image_tag('instagram.png')
+				%a{href:'#'}
+					= image_tag('twitter.png')
+				%a{href:'https://es.pinterest.com/mariuorjeda/', target: "_blank"}
+					= image_tag('pinterest.png')
+
 		= render partial: 'layouts/menu'
 
 		- if flash[:notice]
@@ -28,5 +48,10 @@
 					&times;
 				= flash[:warning]
 
-		#container
+		#container.clear
 			= yield
+		#sponsor_bar.clear
+		#tagcloud.clear
+		#footer.clear
+			%br
+			&#169; 2016 mamiamiga.com | powered by cloudylab.co.uk

@@ -1,0 +1,13 @@
+.col-md-8
+	- @posts.each do |post|
+		.post_date
+			= l(post.created_at, :format => '%A %d de %B del %Y, %H:%M')
+		.post_title
+			= post.title
+		.post_content
+			= truncate(post.content_notags, :length => 600, :separator => ' ')
+			= link_to 'LEER MÁS ', post, class: 'read_more'
+	= will_paginate @posts
+
+.col-md-4
+	= render partial: 'sidebar'

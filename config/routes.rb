@@ -1,13 +1,29 @@
 Rails.application.routes.draw do
  
   mount Bootsy::Engine => '/bootsy', as: 'bootsy'
-  devise_for :users
+  
   root to: 'home#index' 
 
+  resources :contact_forms, only: [:new, :create]
+
+  devise_for :users
+  
+  devise_scope :user do
+  get "/login" => "devise/sessions#new"
+  end
+
   get 'quiensoy' => 'home#about'
+  get 'vidademami' => 'home#vidademami'
+  get 'inspirate' => 'home#inspirate'
+  get 'modamamas' => 'home#modamamas'
+  get 'modapeques' => 'home#modapeques'
+  get 'engriete' => 'home#engriete'
+  get 'novedades' => 'home#novedades'
+  get 'contacto' => 'contact_forms#new'
 
+  resources :topics
   resources :posts
-
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
