@@ -13,7 +13,7 @@ class Post < ActiveRecord::Base
   scope :featured, -> { where(private: false, featured: true) }
   scope :slider, -> { where(private: false, slider: true) }
 
-  default_scope { order('created_at DESC') }
+  default_scope { order('published_at DESC') }
 
   def content_notags
   	self.content.gsub(/<.*>/m,"")

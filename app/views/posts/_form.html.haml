@@ -26,6 +26,13 @@
 				= f.label 'En cuadritos'
 				= f.check_box :featured, class: 'checkbox'
 			.form_group
+				= f.label 'Fecha de publicación'
+				= f.datetime_select :published_at
+				#datetimepicker1.input-group.date
+					%input.form-control{:type => "text"}/
+					%span.input-group-addon
+						%span.glyphicon.glyphicon-calendar
+			.form_group
 				= f.label 'Privado'
 				= f.check_box :private, class: 'checkbox'
 			.form-group

@@ -68,6 +68,7 @@ topics = Topic.all
 		slider = Faker::Avatar.image(Faker::Name.first_name, "1800x800")
 	  post = Post.create!(
 	    title: Faker::Lorem.sentence,
+	    published_at: rand(10.minutes .. 1.week).ago,
       topic: topics.sample,
 	    content: Faker::Lorem.paragraph(50),
 	    remote_featured_image_url: featured.gsub('http://','https://'),
@@ -80,6 +81,7 @@ topics = Topic.all
 	  post = Post.create!(
 	    title: Faker::Lorem.sentence,
       topic: topics.sample,
+ 	    published_at: rand(2.weeks .. 1.year).ago,
 	    content: Faker::Lorem.paragraph(10),
 	    user_id: 1)
   	post.update_attributes!(created_at: rand(2.weeks .. 1.year).ago)

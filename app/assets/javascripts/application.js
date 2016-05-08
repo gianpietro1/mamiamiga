@@ -15,6 +15,9 @@
 //= require turbolinks
 //= require bootstrap
 //= require social-share-button
+//= require moment
+//= require bootstrap-datetimepicker
+//= require moment/es
 //= require_tree .
 //= require bootsy
 

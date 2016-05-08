@@ -2,17 +2,19 @@
 	%ul.slideme
 		- @posts_slider.each do |post_slider|
 			%li
-				= image_tag(post_slider.slider_image)
+				%a{href: post_path(post_slider.id), class:'image_post'}
+					= image_tag(post_slider.slider_image)
 %ul.featured_posts
 	- @posts_featured.each do |post_featured|
 		%li.home_featured
-			= image_tag(post_featured.featured_image)
+			%a{href: post_path(post_featured.id), class:'image_post'}
+				= image_tag(post_featured.featured_image)
 .row
 	.line
 	.col-md-8
 		.top_post
 			.post_date
-				= l(@posts_public.first.created_at, :format => '%A %d de %B del %Y, %H:%M')
+				= l(@posts_public.first.published_at, :format => '%A %d de %B del %Y, %H:%M')
 			.post_title
 				= @posts_public.first.title
 			.post_content
@@ -21,7 +23,7 @@
 
 		.bottom_post
 			.post_date
-				= I18n.l @posts_public.last.created_at
+				= l(@posts_public.last.published_at, :format => '%A %d de %B del %Y, %H:%M')
 			.post_title
 				= @posts_public.last.title
 			.post_content
