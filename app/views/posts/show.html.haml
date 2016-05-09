@@ -9,7 +9,7 @@
 			= link_to "Nuevo", new_post_path, class: 'btn-sm btn-success'
 		- if policy(@post).edit? 
 			= link_to "Editar", edit_post_path(@post), class: 'btn-sm btn-warning'
-	.post_date
+	.post_date.margin-top-20
 		= l(@post.published_at, :format => '%A %d de %B del %Y, %H:%M')
 	.post_title
 		= @post.title
@@ -18,8 +18,8 @@
 	.sharesocial.clearfix
 		.social-other.pull-left
 			= social_share_button_tag(@post.title)
-		.fb-share-button{"data-href" => post_path(@post), "data-layout" => "button_count", "data-mobile-iframe" => "true", "class" => "pull-left"}
-	.fb-comments{"data-href" => post_path(@post), "data-numposts" => "5", "data-width" => "600"}
+		.fb-share-button{"data-href" => post_url(@post), "data-layout" => "button_count", "data-mobile-iframe" => "true", "class" => "pull-left"}
+	.fb-comments{"data-href" => post_url(@post), "data-numposts" => "5", "data-width" => "100%"}
 
 
 .col-md-4

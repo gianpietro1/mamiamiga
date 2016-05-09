@@ -49,6 +49,10 @@ html {
 	margin: 20px;
 }
 
+.margin-top-20 {
+	margin-top: 20px;
+}
+
 body {
    font-family: 'Geneva', 'Helvetica';
 }
@@ -65,7 +69,6 @@ body {
 	position: relative;
 	width: 100%;
 	height: 100%;
-	margin-top: 20px;
 }
 
 h1 {
@@ -92,7 +95,7 @@ h1 {
 	height: 106px;
 	background-image: asset-url('bg-top.png');
 	background-size: 100% 106px;
-	padding-left: 35px;
+	padding-left: 20px;
 	padding-top: 12px;
 	font-family: 'I love the smell of rain';
 }
@@ -113,6 +116,7 @@ h1 {
 .navbar-toggle {
 	border-color: #F98CB6;
 	background-color: transparent;
+	margin-right: 7px !important;
 }
 
 .icon-bar {
@@ -153,12 +157,12 @@ h1 {
 
 .social-icons {
 	float: right;
-	margin-top: 42px;
-	margin-right: 14px;
+	margin-top: 47px;
+	margin-right: 5px;
 }
 
 .social-icons a {
-	padding-right: 5px;
+	padding-right: 1px;
 }
 
 .social-icons a:hover {
