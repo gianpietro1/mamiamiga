@@ -9,6 +9,15 @@
 	display:none;
 }
 
+.featured_posts li:nth-child(2) {
+	position: absolute;
+	left:0;
+}
+
+.featured_posts li:nth-child(1) {
+	margin-left:33.3%;
+}
+
 .home_featured {
 	float:left;
 	width: 33.3%;
@@ -28,6 +37,7 @@
 }
 
 .slideme_container {
+	border-top: 2.5px dashed #F98CB6;
 	position: relative;
 	width: 100%;
 	padding: 0;
@@ -47,7 +57,7 @@
 
 .slideme_container button.next {
 	position: absolute;
-	right: 0px;
+	right: 10px;
 	border-radius: 0 100% 100% 0;	
 	background: asset-url('arrow-right.png') no-repeat;
 	background-size: 20px 20px;
@@ -56,6 +66,7 @@
 .slideme_container button.prev {
 	background: asset-url('arrow-left.png') no-repeat;
 	background-size: 20px 20px;
+	left: 10px;
 }
 
 .top_post, .bottom_post {
@@ -93,7 +104,7 @@
 	bottom: 0;
 	padding: 3px;
 	color: white;
-	font-size: 0.8em;
+	font-size: 1em;
 	margin: 0 auto;
 	width: 100%;
 	font-family: 'I love the smell of rain'
@@ -130,8 +141,16 @@ ul.featured_posts > li:nth-child(4) > a > .image_post_title_featured {
 	}
 
 	.image_post_title_slider, .image_post_title_featured {
-		font-size: 1.3em;
+		font-size: 1.8em;
 		padding: 5px;
+	}
+
+	.featured_posts li:nth-child(2) {
+		position: initial;
+	}
+
+	.featured_posts li:nth-child(1) {
+		margin-left:0;
 	}
 
 }

@@ -8,7 +8,7 @@ $('#slide').slideme({
 	},
 	resizable: {
 	width: 810,
-	height: 404,
+	height: 402,
 	},
 	autoslide : true,
 	autoslideHoverStop : true,
