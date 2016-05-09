@@ -23,7 +23,7 @@ class Post < ActiveRecord::Base
   end
 
   def content_notags
-  	self.content.gsub(/<img([^>])+/, "")
+  	self.content.gsub(/<img([^>])+/, '').gsub(/<br\s*\/?>/, '')
   end
 
 end

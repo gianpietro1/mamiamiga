@@ -10,7 +10,7 @@
 		.post_title
 			= post.title
 		.post_content
-			= truncate(post.content_notags, :length => 600, :separator => ' ', escape: false)
+			= truncate(sanitize(post.content, :tags=>[]), :length => 400, :separator => ' ')
 			%br
 			= link_to 'LEER MÁS ', post, class: 'read_more'
 	= will_paginate @posts

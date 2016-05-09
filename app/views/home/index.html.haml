@@ -29,7 +29,7 @@
 			.post_title
 				= @posts_public.first.title
 			.post_content
-				= truncate(@posts_public.first.content_notags, :length => 1400, :separator => ' ', escape: false)
+				= truncate(sanitize(@posts_public.first.content, :tags=>[]), :length => 1400, :separator => ' ')
 				%br
 				= link_to 'LEER MÁS ', @posts_public.first, class: 'read_more'
 
@@ -39,7 +39,7 @@
 			.post_title
 				= @posts_public.last.title
 			.post_content
-				= truncate(@posts_public.last.content_notags, :length => 1400, :separator => ' ', escape: false)
+				= truncate(sanitize(@posts_public.last.content, :tags=>[]), :length => 1400, :separator => ' ')
 				%br
 			= link_to 'LEER MÁS ', @posts_public.last, class: 'read_more read_more_white'
 

@@ -15,7 +15,12 @@
 		= @post.title
 	.post_content
 		= @post.content.html_safe
-	= social_share_button_tag(@post.title)
+	.sharesocial.clearfix
+		.social-other.pull-left
+			= social_share_button_tag(@post.title)
+		.fb-share-button{"data-href" => post_path(@post), "data-layout" => "button_count", "data-mobile-iframe" => "true", "class" => "pull-left"}
+	.fb-comments{"data-href" => post_path(@post), "data-numposts" => "5", "data-width" => "600"}
+
 
 .col-md-4
 	= render partial: 'home/sidebar'
