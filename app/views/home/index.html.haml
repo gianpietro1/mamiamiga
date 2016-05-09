@@ -30,7 +30,7 @@
 			.post_title
 				= link_to post0.title, post0, class: 'no_link_style_dark'
 			.post_content
-				= truncate(sanitize(post0.content, :tags=>[]), :length => 1400, :separator => ' ')
+				= truncate(sanitize(post0.content, :tags=>[]), :length => 700, :separator => ' ')
 				%br
 			= link_to 'LEER MÁS ', post0, class: 'read_more'
 
@@ -41,7 +41,7 @@
 			.post_title
 				= link_to post1.title, post1, class: 'no_link_style_light'
 			.post_content
-				= truncate(sanitize(post1.content, :tags=>[]), :length => 1400, :separator => ' ')
+				= truncate(sanitize(post1.content, :tags=>[]), :length => 700, :separator => ' ')
 				%br
 			= link_to 'LEER MÁS ', post1, class: 'read_more read_more_white'
 
@@ -52,10 +52,20 @@
 			.post_title
 				= link_to post2.title, post2, class: 'no_link_style_dark'
 			.post_content
-				= truncate(sanitize(post2.content, :tags=>[]), :length => 1400, :separator => ' ')
+				= truncate(sanitize(post2.content, :tags=>[]), :length => 700, :separator => ' ')
 				%br
 			= link_to 'LEER MÁS ', post2, class: 'read_more'
 
+		.bottom_post
+			- post3 = @posts_public[3]
+			.post_date
+				= l(post3.published_at, :format => '%A %d de %B del %Y, %H:%M')
+			.post_title
+				= link_to post3.title, post3, class: 'no_link_style_light'
+			.post_content
+				= truncate(sanitize(post3.content, :tags=>[]), :length => 700, :separator => ' ')
+				%br
+			= link_to 'LEER MÁS ', post3, class: 'read_more read_more_white'
 
 	.col-md-4
 		= render partial: 'sidebar'
