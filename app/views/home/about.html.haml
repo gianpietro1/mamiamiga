@@ -1,5 +1,5 @@
-- title 'Mami Amiga'
-- set_meta_tags :og => {:title => 'Mami Amiga', :url => 'http://mamiamiga.com', :image => image_tag('logo-web.png'), :description => 'Mamá a tiempo completo de una pequeñita que amo con locura. Aquí encontrarás ideas, experiencias e inspiración para disfrutar al máximo ser mamá.' }
+- title 'Mami Amiga - Quién Soy'
+- set_meta_tags :og => {:title => 'Mami Amiga - Quién Soy', :url => 'http://mamiamiga.com', :image => image_tag('logo-web.png'), :description => 'Mamá a tiempo completo de una pequeñita que amo con locura. Aquí encontrarás ideas, experiencias e inspiración para disfrutar al máximo ser mamá.', :fb => { :app_id => '241073229593702' } }
 - set_meta_tags description: 'Mamá a tiempo completo de una pequeñita que amo con locura. Aquí encontrarás ideas, experiencias e inspiración para disfrutar al máximo ser mamá.'
 - set_meta_tags keywords: %W[mamiamiga mami mama amiga loncheras maternidad consejos]
 
@@ -17,5 +17,12 @@
 			Aquí encontrarás muchas anécdotas, un poco de catarsis (siempre necesaria), inspiración, manualidades, recetas, un poco de moda, tips de belleza; además de muchas ideas y consejos para que disfrutes al máximo ser mamá.
 		%p
 			¡Bienvenida a Mami Amiga! 
+
+	.sharesocial.clearfix
+		.social-other.pull-left
+			= social_share_button_tag('MamiAmiga - Quién Soy')
+		.fb-share-button{"data-href" => 'http://mamiamiga.com/quiensoy', "data-layout" => "button_count", "data-mobile-iframe" => "true", "class" => "pull-left"}
+	.fb-comments{"data-href" => 'http://mamiamiga.com/quiensoy', "data-numposts" => "5", "data-width" => "100%"}
+
 .col-md-4
 	= render partial: 'sidebar'
