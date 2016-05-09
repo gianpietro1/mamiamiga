@@ -447,26 +447,28 @@ a.about_link:hover, a.mbp_link:hover {
 		width: 50px !important;
 	}
 
+	#main-menu li {
+		border-bottom: none
+	}
+
 	ul.child_menu {
 		height: 0px;
 	}
 
 	ul.child_menu > li {
-		border: 2.5px dashed #F98CB6;
+		border: 2.5px dashed #F98CB6 !important;
 		background-color: white;
 	}
 
 	ul.child_menu > li:first-child {
-		border-bottom: none;
+		border-bottom: none !important;
 	}
 
 	ul.child_menu > li:last-child {
-		border-top: none;
+		border-top: none !important;
 	}
 
-	#main-menu li {
-		border-bottom: none
-	}
+
 
 
 }
