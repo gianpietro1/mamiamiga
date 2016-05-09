@@ -10,7 +10,7 @@
 				%a{href: post_path(post_slider), class:'image_post'}
 					.image_post_img
 						= image_tag(post_slider.slider_image)
-					.image_post_title
+					.image_post_title_slider
 						= post_slider.title
 %ul.featured_posts
 	- @posts_featured.each do |post_featured|
@@ -18,7 +18,7 @@
 			%a{href: post_path(post_featured), class:'image_post'}
 				.image_post_img
 					= image_tag(post_featured.featured_image)
-				.image_post_title
+				.image_post_title_featured
 					= post_featured.title
 .row
 	.line
@@ -27,7 +27,7 @@
 			.post_date
 				= l(@posts_public.first.published_at, :format => '%A %d de %B del %Y, %H:%M')
 			.post_title
-				= @posts_public.first.title
+				= link_to @posts_public.first.title, @posts_public.first, class: 'no_link_style_dark'
 			.post_content
 				= truncate(sanitize(@posts_public.first.content, :tags=>[]), :length => 1400, :separator => ' ')
 				%br
@@ -37,7 +37,7 @@
 			.post_date
 				= l(@posts_public.last.published_at, :format => '%A %d de %B del %Y, %H:%M')
 			.post_title
-				= @posts_public.last.title
+				= link_to @posts_public.last.title, @posts_public.last, class: 'no_link_style_light'
 			.post_content
 				= truncate(sanitize(@posts_public.last.content, :tags=>[]), :length => 1400, :separator => ' ')
 				%br

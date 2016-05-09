@@ -53,6 +53,18 @@ html {
 	margin-top: 20px;
 }
 
+.no_link_style_dark {
+	color: #6FB7D6;
+}
+
+.no_link_style_light {
+	color: white;
+}
+
+.no_link_style_dark:hover, .no_link_style_light:hover,  {
+	text-decoration: none
+}
+
 body {
    font-family: 'Geneva', 'Helvetica';
 }
@@ -325,6 +337,13 @@ a.about_link:hover {
 	padding-top: 25px;
 }
 
+/* Contact Form */
+
+.contact_form {
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 20px;
+}
 
 /* Desktop */
 
