@@ -14,7 +14,7 @@
           = f.text_field :contact_email, class: 'form-control', :required => true, :title => 'Por favor llena este campo.'
         .form_group
           = f.label 'Comentarios'
-          = f.text_area :contact_comments, class: 'form-control'
+          = f.text_area :contact_comments, class: 'form-control', :required => true, :title => 'Por favor llena este campo.'
         %p
         .form_group.pull-left
           = link_to 'Cancelar', root_path, class: "btn btn-danger"

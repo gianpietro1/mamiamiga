@@ -87,6 +87,16 @@ h1 {
 	font-size: 1.7em;
 }
 
+.btn-success {
+	background-color: #F98CB6 !important;
+	border-color: #F98CB6 !important;
+}
+
+.btn-danger {
+	background-color: #A589C1 !important;
+	border-color: #A589C1 !important;
+}
+
 /* Header */
 
 #user {
@@ -343,6 +353,7 @@ a.about_link:hover, a.mbp_link:hover {
 	width: 90%;
 	margin: 0 auto;
 	margin-top: 20px;
+	height: 300px;
 }
 
 /* Desktop */
