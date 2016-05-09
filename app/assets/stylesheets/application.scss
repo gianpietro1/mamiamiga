@@ -290,11 +290,12 @@ ul.child_menu > li {
 
 .about_info img, .mbp_info img {
 	width: 100%;
-	margin: 10px auto;
+	margin-bottom: 0;
 }
 
-.about_info {
-	font-size: 1.4em
+.about_info a {
+	font-size: 1.4em;
+	color: #A589C1;
 }
 
 a.about_link, a.mbp_link {
@@ -319,7 +320,7 @@ a.about_link:hover, a.mbp_link:hover {
 
 .instagram_info {
 	overflow: auto;
-	height: 587px;
+	height: 629px;
 	text-align: center
 }
 

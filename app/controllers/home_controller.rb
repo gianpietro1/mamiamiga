@@ -2,7 +2,7 @@ class HomeController < ApplicationController
 
   def index
   	@posts_slider = Post.slider.first(5)
-  	@posts_featured = Post.featured.first(4)
+  	@posts_featured = Post.featured.first(3)
   	@posts_public = Post.not_private.first(4)
   end
 

@@ -13,6 +13,8 @@
 					.image_post_title_slider
 						= post_slider.title
 %ul.featured_posts
+	%li.home_featured
+		= image_tag('cafecito')
 	- @posts_featured.each do |post_featured|
 		%li.home_featured
 			%a{href: post_path(post_featured), class:'image_post'}

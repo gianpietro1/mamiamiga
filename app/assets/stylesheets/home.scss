@@ -90,25 +90,29 @@
 
 .image_post_title_slider, .image_post_title_featured {
 	position: absolute;
-	top: 0;
+	bottom: 0;
 	padding: 3px;
 	color: white;
-	font-size: 0.7em;
+	font-size: 0.8em;
 	margin: 0 auto;
 	width: 100%;
 	font-family: 'I love the smell of rain'
 }
 
 .image_post_title_slider {
-	background-color: rgba(111,183,214,0.6);
+	background-color: rgba(165,137,193,0.6);
 }
 
-ul.featured_posts > li:nth-child(odd) > a > .image_post_title_featured {
+ul.featured_posts > li:nth-child(2) > a > .image_post_title_featured {
 	background-color: rgba(249,140,182,0.6);
 }
 
-ul.featured_posts > li:nth-child(even) > a > .image_post_title_featured {
+ul.featured_posts > li:nth-child(3) > a > .image_post_title_featured {
 	background-color: rgba(111,183,214,0.6);
+}
+
+ul.featured_posts > li:nth-child(4) > a > .image_post_title_featured {
+	background-color: rgba(191,228,118,0.6);
 }
 
 /* Desktop */
@@ -126,7 +130,7 @@ ul.featured_posts > li:nth-child(even) > a > .image_post_title_featured {
 	}
 
 	.image_post_title_slider, .image_post_title_featured {
-		font-size: 1.2em;
+		font-size: 1.3em;
 		padding: 5px;
 	}
 
