@@ -256,13 +256,13 @@ ul.child_menu > li {
 
 /* side bar */
 
-.about {
+.about, .mbp {
 	padding: 20px 40px;
 	padding-top:0px;
 	font-family: 'I love the smell of rain';
 }
 
-.about_title, .instagram_title {
+.about_title, .instagram_title, .mbp_title {
 	border: 2.5px dashed #F98CB6;
 	font-size: 1.8em;
 	text-align: center;
@@ -270,7 +270,7 @@ ul.child_menu > li {
 	padding-top: 8px;
 }
 
-.about_info img {
+.about_info img, .mbp_info img {
 	width: 100%;
 	margin: 10px auto;
 }
@@ -279,11 +279,11 @@ ul.child_menu > li {
 	font-size: 1.4em
 }
 
-a.about_link {
+a.about_link, a.mbp_link {
 	display: block;
 }
 
-a.about_link:hover {
+a.about_link:hover, a.mbp_link:hover {
 	text-decoration: none;
 	opacity: 0.7
 }

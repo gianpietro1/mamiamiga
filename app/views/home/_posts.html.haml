@@ -12,7 +12,7 @@
 		.post_content
 			= truncate(sanitize(post.content, :tags=>[]), :length => 400, :separator => ' ')
 			%br
-			= link_to 'LEER MÁS ', post, class: 'read_more'
+		= link_to 'LEER MÁS ', post, class: 'read_more'
 	= will_paginate @posts
 
 .col-md-4
