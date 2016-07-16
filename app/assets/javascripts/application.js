@@ -25,7 +25,7 @@ $(document).ready(function(){
 
 	$("#instagram").jqinstapics({
 	"user_id": "245688425",
-	"access_token": "245688425.1677ed0.870eb1e9b3c74f62b23a2960a3e2f072",
+	"access_token": "245688425.1677ed0.112b1143ed9b474bbe1ca7a15f9ec2de",
 	"count": 6
 	});
 

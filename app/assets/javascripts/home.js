@@ -12,7 +12,7 @@ $('#slide').slideme({
 	},
 	autoslide : true,
 	autoslideHoverStop : true,
-	interval : 2000,
+	interval : 4000,
 	transition : 'fade',
 	loop : true,
 });
