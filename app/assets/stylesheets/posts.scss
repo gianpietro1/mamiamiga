@@ -69,9 +69,16 @@
 
 .post_by_time_next {
 	float: right;
-
 	text-align: right;
 	border-top-right-radius: 5px;
+}
+
+.post_by_time_prev > .post_by_time_image {
+	padding-right: 3px;
+}
+
+.post_by_time_next > .post_by_time_image {
+	padding-left: 3px;
 }
 
 .post_by_tag {
