@@ -18,11 +18,9 @@
 //= require moment
 //= require bootstrap-datetimepicker
 //= require moment/es
-//= require froala_editor.min.js
-//= require plugins/image.min.js
-//= require plugins/image_manager.min.js
 //= require_tree .
 //= require bootsy
+//= require ckeditor/init
 
 $(document).ready(function(){
 

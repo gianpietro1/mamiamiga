@@ -5,10 +5,11 @@ class Post < ActiveRecord::Base
 	has_many :comments
 	belongs_to :topic
 	belongs_to :user
+  
+  acts_as_taggable
 
 	mount_uploader :featured_image, FeaturedImageUploader
 	mount_uploader :slider_image, SliderImageUploader
-  # mount_uploader :image, PostImageUploader
 
   scope :not_private, -> { where(private: false) }
   scope :featured, -> { where(private: false, featured: true) }
@@ -29,6 +30,14 @@ class Post < ActiveRecord::Base
 
   def make_public
     self.update_attributes(private: false)
+  end
+
+  def next
+    self.class.not_private.where("published_at > ?", published_at).last
+  end
+
+  def prev
+    self.class.not_private.where("published_at < ?", published_at).first
   end
 
 end

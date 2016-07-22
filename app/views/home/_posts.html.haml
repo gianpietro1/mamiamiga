@@ -8,7 +8,7 @@
 		.post_date.margin-top-20
 			= l(post.published_at.localtime, :format => '%A %d de %B del %Y, %H:%M')
 		.post_title
-			= post.title
+			= link_to post.title, post, class: 'no_link_style_dark'
 		.post_content
 			= truncate(sanitize(post.content, :tags=>[]), :length => 400, :separator => ' ')
 			%br

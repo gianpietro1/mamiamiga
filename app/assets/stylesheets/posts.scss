@@ -4,3 +4,94 @@
 .post_content img {
 	max-width: 100%;
 }
+
+.checkbox {
+	float: left;
+	margin-right: 3px !important;
+}
+
+.file_label {
+	width: auto	
+}
+
+.file_label, .file_field {
+	display: inline-block !important;
+}
+
+.file_field {
+	margin-left: 3px !important;
+	width: 250px;
+}
+
+.post_tags {
+	margin-bottom: 10px;
+}
+
+.tag {
+	display: inline-block;
+	margin-right: 1px;
+	background-color: rgba(249, 140, 182, 0.6);
+	border-radius: 5px;
+	padding: 3px 5px;
+	color: white;
+	font-size: 0.8em;
+}
+
+.post_other {
+	padding: 10px;
+	font-family: 'Geneva';
+	font-size: 0.9em;
+}
+
+.post_by_time {
+	margin-bottom: 0px;
+}
+
+.post_by_time a {
+	display: inline-block;
+	width: 50%;
+	height: 60px;
+	color: white;
+	background-color: rgba(111, 183, 214, 0.6);
+	padding: 5px;
+	color: white;
+}
+
+.post_by_time a:hover {
+	text-decoration: none;
+	background-color: rgba(111, 183, 214, 0.9);
+}
+
+.post_by_time_prev {
+	float: left;
+	border-top-left-radius: 5px;
+}
+
+.post_by_time_next {
+	float: right;
+
+	text-align: right;
+	border-top-right-radius: 5px;
+}
+
+.post_by_tag {
+	padding: 5px;
+	color: white;
+	background-color: rgba(165, 137, 193, 0.6);
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.post_related {
+	margin-left: 5px;
+}
+
+.post_related a {
+	color: white;
+}
+
+.post_related a:hover {
+	text-decoration: none;
+	color: #CCECEF;
+}
+

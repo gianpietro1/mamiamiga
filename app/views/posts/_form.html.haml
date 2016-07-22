@@ -10,15 +10,19 @@
 				= f.text_field :title, class: 'form-control', placeholder: 'Ingresa el título'
 			.form-group
 				= f.label :content
-				= f.bootsy_area :content, rows:40, class: 'form-control', placeholder: 'Ingresa el texto'
+				-#= f.bootsy_area :content, rows:40, class: 'form-control', placeholder: 'Ingresa el texto'
 				-#= f.text_area :content, rows:20, id: 'edit', class: 'form-control', placeholder: 'Ingresa el texto'
+				= f.cktext_area :content, rows:40, class: 'form-control', placeholder: 'Ingresa el texto',ckeditor: { language: 'es'}
 			.form_group
-				= f.label 'Imagen cuadritos'
-				= f.file_field :featured_image
+				= f.label 'Etiquetas'
+				= f.text_field :tag_list, class: 'form-control', placeholder: 'etiquetas separadas por comas', value: f.object.tag_list.to_s
+			.form_group
+				= f.label 'Imagen cuadritos', class: 'file_label'
+				= f.file_field :featured_image, class: 'file_field'
 				= f.hidden_field :featured_image_cache
 			.form_group
-				= f.label 'Imagen slider'
-				= f.file_field :slider_image
+				= f.label 'Imagen slider', class: 'file_label'
+				= f.file_field :slider_image, class: 'file_field'
 				= f.hidden_field :slider_image_cache
 			.form_group
 				= f.label 'En slider'
@@ -29,14 +33,18 @@
 			.form_group
 				= f.label 'Fecha de publicación'
 				= f.datetime_select :published_at
-				#datetimepicker1.input-group.date
-					%input.form-control{:type => "text"}/
-					%span.input-group-addon
-						%span.glyphicon.glyphicon-calendar
+				-##datetimepicker1.input-group.date
+				-#	%input.form-control{:type => "text"}/
+				-#	%span.input-group-addon
+				-#		%span.glyphicon.glyphicon-calendar
 			.form_group
 				= f.label 'Privado'
-				= f.check_box :private, class: 'checkbox'
+				= f.check_box :private, class: 'checkbox'			
 			.form-group
 				= f.submit "Guardar", class: 'btn btn-success'
+				- if post
+					= link_to t(:cancel), post, class: "btn btn-danger"
+				- else
+					= link_to t(:cancel), posts, class: "btn btn-danger"
 
 

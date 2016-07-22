@@ -13,6 +13,11 @@
 		= l(@post.published_at.localtime, :format => '%A %d de %B del %Y, %H:%M')
 	.post_title
 		= @post.title
+	.post_tags
+		- if @post.tags != []
+			- @post.tag_list.each do |tag|
+				.tag
+					=	tag
 	.post_content
 		= @post.content.html_safe
 	.sharesocial.clearfix
@@ -20,6 +25,26 @@
 			= social_share_button_tag(@post.title)
 		.fb-like.margin-left-05{"data-action" => "like", "data-href" => post_url(@post), "data-layout" => "button_count", "data-share" => "true", "data-show-faces" => "false", "data-size" => "small", "data-mobile-iframe" => "true","class" => "pull-left"}
 		-#.fb-share-button{"data-href" => post_url(@post), "data-layout" => "button_count", "data-mobile-iframe" => "true", "class" => "pull-left"}
+	.post_other
+		.post_by_time.clearfix
+			- if @post.prev
+				%a{href:post_url(@post.prev), class:'post_by_time_prev'}
+					.post_by_time_image.pull-left
+						= image_tag(@post.prev.featured_image.thumb) if @post.prev.featured_image
+					Anterior:
+					= @post.prev.title
+			- if @post.next
+				%a{href:post_url(@post.next), class:'post_by_time_next'}
+					.post_by_time_image.pull-right
+						= image_tag(@post.next.featured_image.thumb) if @post.next.featured_image
+					Siguiente:
+					= @post.next.title
+		- if @post.find_related_tags != []
+			.post_by_tag.clear
+				También te puede interesar:
+				- @post.find_related_tags.first(5).each do |post|
+					.post_related
+						= link_to "#{post.title} (#{l(post.published_at, :format => '%B %Y')})", post
 	.fb-comments{"data-href" => post_url(@post), "data-numposts" => "5", "data-width" => "100%"}
 
 

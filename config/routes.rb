@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
  
+  mount Ckeditor::Engine => '/ckeditor'
   mount Bootsy::Engine => '/bootsy', as: 'bootsy'
   
   root to: 'home#index' 
@@ -22,12 +23,7 @@ Rails.application.routes.draw do
   get 'contacto' => 'contact_forms#new'
 
   resources :topics
-  resources :posts do
-    collection do
-      post :froala_image_upload
-    end
-  end
-
+  resources :posts
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

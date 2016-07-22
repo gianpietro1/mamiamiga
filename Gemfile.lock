@@ -6,6 +6,14 @@ GIT
       capistrano (~> 3.0)
       sshkit (~> 1.2)
 
+GIT
+  remote: git://github.com/galetahub/ckeditor.git
+  revision: 189d3c2bc9ec177947aec6932da03eb5a03f6879
+  specs:
+    ckeditor (4.2.0)
+      cocaine
+      orm_adapter (~> 0.5.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -45,6 +53,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    acts-as-taggable-on (3.5.0)
+      activerecord (>= 3.2, < 5)
     arel (6.0.3)
     autoprefixer-rails (6.3.6)
       execjs
@@ -56,10 +66,9 @@ GEM
       sass (>= 3.3.4)
     bootstrap3-datetimepicker-rails (4.17.37)
       momentjs-rails (>= 2.8.1)
-    bootsy (2.2.1)
-      carrierwave (~> 0.10)
-      mini_magick (~> 4.3)
-      remotipart (~> 1.2)
+    bootsy (2.3.0)
+      carrierwave (~> 0.11)
+      mini_magick (~> 4.5)
     builder (3.2.2)
     byebug (8.2.4)
     capistrano (3.4.1)
@@ -77,6 +86,10 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.8)
+      climate_control (>= 0.0.3, < 1.0)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.1.x)
@@ -234,8 +247,6 @@ GEM
     fog-xml (0.1.2)
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
-    font-awesome-rails (4.6.3.1)
-      railties (>= 3.2, < 5.1)
     formatador (0.2.5)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
@@ -332,7 +343,6 @@ GEM
       trollop
     rdoc (4.2.2)
       json (~> 1.4)
-    remotipart (1.2.1)
     responders (2.1.2)
       railties (>= 4.2.0, < 5.1)
     ruby_parser (3.8.1)
@@ -381,15 +391,13 @@ GEM
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
     will_paginate (3.1.0)
-    wysiwyg-rails (2.3.4)
-      font-awesome-rails (~> 4.4, >= 4.4.0.0)
-      railties (>= 3.2, < 6.0)
     xml-simple (1.1.5)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on (~> 3.4)
   bootstrap-sass
   bootstrap3-datetimepicker-rails (~> 4.17.37)
   bootsy
@@ -399,6 +407,7 @@ DEPENDENCIES
   capistrano-rails
   capistrano-rvm!
   carrierwave
+  ckeditor!
   coffee-rails (~> 4.1.0)
   daemons
   delayed_job_active_record
@@ -429,7 +438,6 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
   will_paginate
-  wysiwyg-rails
 
 BUNDLED WITH
    1.11.2
