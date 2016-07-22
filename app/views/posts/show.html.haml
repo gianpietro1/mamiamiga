@@ -18,7 +18,8 @@
 	.sharesocial.clearfix
 		.social-other.pull-left
 			= social_share_button_tag(@post.title)
-		.fb-share-button{"data-href" => post_url(@post), "data-layout" => "button_count", "data-mobile-iframe" => "true", "class" => "pull-left"}
+		.fb-like.margin-left-05{"data-action" => "like", "data-href" => post_url(@post), "data-layout" => "button_count", "data-share" => "true", "data-show-faces" => "false", "data-size" => "small", "data-mobile-iframe" => "true","class" => "pull-left"}
+		-#.fb-share-button{"data-href" => post_url(@post), "data-layout" => "button_count", "data-mobile-iframe" => "true", "class" => "pull-left"}
 	.fb-comments{"data-href" => post_url(@post), "data-numposts" => "5", "data-width" => "100%"}
 
 
