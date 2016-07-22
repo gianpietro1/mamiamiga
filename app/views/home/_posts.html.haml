@@ -6,7 +6,7 @@
 .col-md-8
 	- posts.each do |post|
 		.post_date.margin-top-20
-			= l(post.published_at, :format => '%A %d de %B del %Y, %H:%M')
+			= l(post.published_at.localtime, :format => '%A %d de %B del %Y, %H:%M')
 		.post_title
 			= post.title
 		.post_content

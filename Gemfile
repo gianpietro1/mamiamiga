@@ -54,15 +54,15 @@ gem 'rails-i18n', '~> 4.0.4'
 gem 'will_paginate'
 #Social share
 gem 'social-share-button'
-# Mail form
-gem 'mail_form'
 # Datetime picker
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
-# Friendly URLs
-gem 'friendly_id'
-# Meta Tags
-gem 'meta-tags'
+# Froala wysiwyg editor 
+gem "wysiwyg-rails"
+# Delayed job
+gem 'delayed_job_active_record'
+# For delayed job
+gem 'daemons'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

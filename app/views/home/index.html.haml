@@ -28,7 +28,7 @@
 		.top_post
 			- post0 = @posts_public[0]
 			.post_date
-				= l(post0.published_at, :format => '%A %d de %B del %Y, %H:%M')
+				= l(post0.published_at.localtime, :format => '%A %d de %B del %Y, %H:%M')
 			.post_title
 				= link_to post0.title, post0, class: 'no_link_style_dark'
 			.post_content
@@ -39,7 +39,7 @@
 		.bottom_post
 			- post1 = @posts_public[1]
 			.post_date
-				= l(post1.published_at, :format => '%A %d de %B del %Y, %H:%M')
+				= l(post1.published_at.localtime, :format => '%A %d de %B del %Y, %H:%M')
 			.post_title
 				= link_to post1.title, post1, class: 'no_link_style_light'
 			.post_content
@@ -50,7 +50,7 @@
 		.top_post
 			- post2 = @posts_public[2]
 			.post_date
-				= l(post2.published_at, :format => '%A %d de %B del %Y, %H:%M')
+				= l(post2.published_at.localtime, :format => '%A %d de %B del %Y, %H:%M')
 			.post_title
 				= link_to post2.title, post2, class: 'no_link_style_dark'
 			.post_content
@@ -61,7 +61,7 @@
 		.bottom_post
 			- post3 = @posts_public[3]
 			.post_date
-				= l(post3.published_at, :format => '%A %d de %B del %Y, %H:%M')
+				= l(post3.published_at.localtime, :format => '%A %d de %B del %Y, %H:%M')
 			.post_title
 				= link_to post3.title, post3, class: 'no_link_style_light'
 			.post_content

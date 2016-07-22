@@ -19,6 +19,10 @@ class PostsController < ApplicationController
    @post = current_user.posts.build(post_params)
    authorize @post
 	 if @post.save
+    if @post.published_at > Time.now
+      @post.update_attributes(private: true)
+      @post.delay(run_at: @post.published_at).make_public
+    end
 	   flash[:notice] = "Post guardado"
 	   redirect_to @post
 	 else
@@ -35,12 +39,25 @@ class PostsController < ApplicationController
 		@post = Post.friendly.find(params[:id])
     authorize @post
 		if @post.update_attributes(post_params)
+      if @post.published_at > Time.now
+        @post.update_attributes(private: true)
+        @post.delay(run_at: @post.published_at).make_public
+      end
 		 flash[:notice] = "Post actualizado."
 		 redirect_to @post
 		else
 		 flash[:error] = "Hubo un error al actualizar el post, por favor reintentar."
 		 render :edit
 		end
+  end
+
+  def froala_image_upload
+    uploader = PostImageUploader.new
+    file = params[:file]
+    uploader.store!(file)
+    render json: { success: true }
+    rescue CarrierWave::IntegrityError => e
+     render json: { error: e.message }
   end
 
   private

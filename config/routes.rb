@@ -22,7 +22,12 @@ Rails.application.routes.draw do
   get 'contacto' => 'contact_forms#new'
 
   resources :topics
-  resources :posts
+  resources :posts do
+    collection do
+      post :froala_image_upload
+    end
+  end
+
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

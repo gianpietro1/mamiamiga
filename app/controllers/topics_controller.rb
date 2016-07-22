@@ -12,7 +12,7 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.find(params[:id])
-    @posts = @topic.posts     # we will need @posts to show every post belonging to a topic in the same view
+    @posts = @topic.posts.not_private     # we will need @posts to show every post belonging to a topic in the same view
     authorize @topic
   end
 

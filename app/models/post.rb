@@ -8,6 +8,7 @@ class Post < ActiveRecord::Base
 
 	mount_uploader :featured_image, FeaturedImageUploader
 	mount_uploader :slider_image, SliderImageUploader
+  # mount_uploader :image, PostImageUploader
 
   scope :not_private, -> { where(private: false) }
   scope :featured, -> { where(private: false, featured: true) }
@@ -24,6 +25,10 @@ class Post < ActiveRecord::Base
 
   def content_notags
   	self.content.gsub(/<img([^>])+/, '').gsub(/<br\s*\/?>/, '')
+  end
+
+  def make_public
+    self.update_attributes(private: false)
   end
 
 end
