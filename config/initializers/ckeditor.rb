@@ -11,6 +11,7 @@ Ckeditor.setup do |config|
   # By default: %w(jpg jpeg png gif tiff)
   # config.image_file_types = %w(jpg jpeg png gif tiff)
 
+  config.swf_file_size_limit = "10 MB"
   # Allowed flash file types for upload.
   # Set to nil or [] (empty array) for all file types
   # By default: %w(jpg jpeg png gif tiff)
