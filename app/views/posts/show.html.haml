@@ -14,7 +14,7 @@
 			.pull-left
 				= l(@post.published_at.localtime, :format => '%A %d de %B del %Y, %H:%M')
 			.pull-right
-				= "Por " + @post.user.name
+				= "por: " + @post.user.name
 	.post_title
 		= @post.title
 	.post_tags
