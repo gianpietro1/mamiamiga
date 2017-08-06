@@ -10,7 +10,11 @@
 		- if policy(@post).edit? 
 			= link_to "Editar", edit_post_path(@post), class: 'btn-sm btn-warning'
 	.post_date.margin-top-20
-		= l(@post.published_at.localtime, :format => '%A %d de %B del %Y, %H:%M')
+		.row
+			.pull-left
+				= l(@post.published_at.localtime, :format => '%A %d de %B del %Y, %H:%M')
+			.pull-right
+				= "Por " + @post.user.name
 	.post_title
 		= @post.title
 	.post_tags
@@ -42,7 +46,7 @@
 		- if @post.find_related_tags != []
 			.post_by_tag.clear
 				También te puede interesar:
-				- @post.find_related_tags.first(5).each do |post|
+				- @post.find_related_tags.first(3).each do |post|
 					.post_related
 						= link_to "#{post.title} (#{l(post.published_at, :format => '%B %Y')})", post
 	.fb-comments{"data-href" => post_url(@post), "data-numposts" => "5", "data-width" => "100%"}
