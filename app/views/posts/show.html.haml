@@ -1,5 +1,6 @@
 - set_meta_tags title: @post.title
-- set_meta_tags :og => {:title => @post.title , :url => post_url(@post), :image => image_url(@post.slider_image), :description => truncate(sanitize(@post.content, :tags=>[]), :length => 200, :separator => ' '), :fb => { :app_id => '241073229593702' }}
+- set_meta_tags :og => {:title => @post.title , :url => post_url(@post), :image => image_url(@post.slider_image), :description => truncate(sanitize(@post.content, :tags=>[]), :length => 200, :separator => ' ')}
+- set_meta_tags :fb => { :app_id => '241073229593702' }
 - set_meta_tags description: truncate(sanitize(@post.content, :tags=>[]), :length => 200, :separator => ' ')
 - set_meta_tags keywords: %W[mamiamiga mami mama amiga loncheras maternidad consejos]
 
