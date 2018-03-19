@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'modapeques' => 'home#modapeques'
   get 'engriete' => 'home#engriete'
   get 'novedades' => 'home#novedades'
+  get 'descargables' => 'home#descargables'
   get 'contacto' => 'contact_forms#new'
 
   resources :topics

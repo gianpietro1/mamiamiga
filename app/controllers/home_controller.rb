@@ -39,4 +39,9 @@ class HomeController < ApplicationController
 		@posts = @topic.posts.not_private.paginate(page: params[:page], per_page: 6)
   end
 
+  def descargables
+    @topic = Topic.find_by(name:'Descargables')
+    @posts = @topic.posts.not_private.paginate(page: params[:page], per_page: 6)
+  end
+
 end
